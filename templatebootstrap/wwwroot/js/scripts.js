@@ -52,3 +52,24 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+function GetAll() {
+    $.ajax({
+
+        type: 'GET',
+        url: 'http://localhost:5065/Empleado/GetAll',
+        success: function (result) {
+            $('#table_usuarios tbody').empty();
+            $.each(result.objects, function (i, empleado) {
+                var filas = '<tr>' + '<td class="text-center"> ' + '<button class="btn btn-warning" onclick="GetById(' + empleado.idEmpleado + ')">' + '<i class="fa-solid fa-user-pen fa-bounce"></i>' + '</button> ' + '</td>' + "<td  id='id' class='text-center'>" + empleado.idEmpleado + "</td>" + "<td class='text-center'>" + empleado.nombre + "</td>" + "<td class='text-center'>" + empleado.departamento.descripcion + "</ td>" + "<td class='text-center'>" + empleado.puesto.descripcion + "</td>"
+                    + '<td class="text-center"> <button class="btn btn-danger" onclick="Eliminar(' + empleado.IdEmpleado + ')"><i class="fa-solid fa-user-xmark fa-beat"></i></button></td>'
+
+                    + "</tr>";
+                $("#table_usuarios tbody").append(filas);
+            });
+            $('#portfolioModal1').modal('show');
+        },
+        error: function (result) {
+            alert('Error en la consulta.' + result.responseJSON.ErrorMessage);
+        }
+    })
+}

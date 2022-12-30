@@ -11,6 +11,7 @@
     <title>Wee Company</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
@@ -25,8 +26,8 @@
         <div class="container">
             <a class="navbar-brand" href="#page-top">Wee Company</a>
             <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars"></i>
+                Empleados
+                <i class="fa-solid fa-people-line fa-bounce"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
@@ -47,7 +48,7 @@
             <!-- Icon Divider-->
             <div class="divider-custom divider-light">
                 <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fas fa-mug-hot"></i></div>
+                <div class="divider-custom-icon"><i class="fas fa-mug-hot fa-beat-fade"></i></div>
                 <div class="divider-custom-line"></div>
             </div>
             <!-- Masthead Subheading-->
@@ -58,18 +59,18 @@
     <section class="page-section portfolio" id="portfolio">
         <div class="container">
             <!-- Portfolio Section Heading-->
-            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">MENÚ</h2>
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Empleados</h2>
             <!-- Icon Divider-->
             <div class="divider-custom">
                 <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-icon"><i class="fa-solid fa-people-line fa-bounce"></i></div>
                 <div class="divider-custom-line"></div>
             </div>
             <!-- Portfolio Grid Items-->
             <div class="row justify-content-center">
                 <!-- Portfolio Item 1-->
                 <div class="col-md-6 col-lg-4 mb-5">
-                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1" onclick=GetAll()>
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" @*data-bs-target="#portfolioModal1"*@ onclick="GetAll()">
                         <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                             <div class="portfolio-item-caption-content text-center text-white"><i class="fa-solid fa-person-half-dress fa-3x"></i></div>
                             <h2>Consulta</h2>
@@ -97,6 +98,14 @@
                         <img class="img-fluid" src="assets/img/portfolio/circus.png" alt="..." />
                     </div>
                 </div>
+             <!-- Portfolio Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Departamentos</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fa-solid fa-building-user fa-bounce"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
                 <!-- Portfolio Item 4-->
                 <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
                     <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
@@ -152,77 +161,77 @@
             </div>
         </div>
     </section>
-@*    <!-- Contact Section-->
-    <section class="page-section" id="contact">
+    @*    <!-- Contact Section-->
+        <section class="page-section" id="contact">
         <div class="container">
-            <!-- Contact Section Heading-->
-            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
-            <!-- Icon Divider-->
-            <div class="divider-custom">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                <div class="divider-custom-line"></div>
-            </div>
-            <!-- Contact Section Form-->
-            <div class="row justify-content-center">
-                <div class="col-lg-8 col-xl-7">
-                    <!-- * * * * * * * * * * * * * * *-->
-                    <!-- * * SB Forms Contact Form * *-->
-                    <!-- * * * * * * * * * * * * * * *-->
-                    <!-- This form is pre-integrated with SB Forms.-->
-                    <!-- To make this form functional, sign up at-->
-                    <!-- https://startbootstrap.com/solution/contact-forms-->
-                    <!-- to get an API token!-->
-                    <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                        <!-- Name input-->
-                        <div class="form-floating mb-3">
-                            <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                            <label for="name">Full name</label>
-                            <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                        </div>
-                        <!-- Email address input-->
-                        <div class="form-floating mb-3">
-                            <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                            <label for="email">Email address</label>
-                            <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                            <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                        </div>
-                        <!-- Phone number input-->
-                        <div class="form-floating mb-3">
-                            <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                            <label for="phone">Phone number</label>
-                            <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                        </div>
-                        <!-- Message input-->
-                        <div class="form-floating mb-3">
-                            <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                            <label for="message">Message</label>
-                            <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                        </div>
-                        <!-- Submit success message-->
-                        <!---->
-                        <!-- This is what your users will see when the form-->
-                        <!-- has successfully submitted-->
-                        <div class="d-none" id="submitSuccessMessage">
-                            <div class="text-center mb-3">
-                                <div class="fw-bolder">Form submission successful!</div>
-                                To activate this form, sign up at
-                                <br />
-                                <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                            </div>
-                        </div>
-                        <!-- Submit error message-->
-                        <!---->
-                        <!-- This is what your users will see when there is-->
-                        <!-- an error submitting the form-->
-                        <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                        <!-- Submit Button-->
-                        <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Send</button>
-                    </form>
-                </div>
-            </div>
+        <!-- Contact Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+        <div class="divider-custom-line"></div>
         </div>
-    </section>*@
+        <!-- Contact Section Form-->
+        <div class="row justify-content-center">
+        <div class="col-lg-8 col-xl-7">
+        <!-- * * * * * * * * * * * * * * *-->
+        <!-- * * SB Forms Contact Form * *-->
+        <!-- * * * * * * * * * * * * * * *-->
+        <!-- This form is pre-integrated with SB Forms.-->
+        <!-- To make this form functional, sign up at-->
+        <!-- https://startbootstrap.com/solution/contact-forms-->
+        <!-- to get an API token!-->
+        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+        <!-- Name input-->
+        <div class="form-floating mb-3">
+        <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+        <label for="name">Full name</label>
+        <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+        </div>
+        <!-- Email address input-->
+        <div class="form-floating mb-3">
+        <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+        <label for="email">Email address</label>
+        <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+        <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+        </div>
+        <!-- Phone number input-->
+        <div class="form-floating mb-3">
+        <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
+        <label for="phone">Phone number</label>
+        <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+        </div>
+        <!-- Message input-->
+        <div class="form-floating mb-3">
+        <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+        <label for="message">Message</label>
+        <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+        </div>
+        <!-- Submit success message-->
+        <!---->
+        <!-- This is what your users will see when the form-->
+        <!-- has successfully submitted-->
+        <div class="d-none" id="submitSuccessMessage">
+        <div class="text-center mb-3">
+        <div class="fw-bolder">Form submission successful!</div>
+        To activate this form, sign up at
+        <br />
+        <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+        </div>
+        </div>
+        <!-- Submit error message-->
+        <!---->
+        <!-- This is what your users will see when there is-->
+        <!-- an error submitting the form-->
+        <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+        <!-- Submit Button-->
+        <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Send</button>
+        </form>
+        </div>
+        </div>
+        </div>
+        </section>*@
     <!-- Footer-->
     <footer class="footer text-center">
         <div class="container">
@@ -271,64 +280,28 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
                                 <!-- Portfolio Modal - Title-->
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Log Cabin</h2>
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Empleados</h2>
                                 <!-- Icon Divider-->
                                 <div class="divider-custom">
                                     <div class="divider-custom-line"></div>
-                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-icon"><i class="fa-solid fa-people-line fa-bounce"></i></div>
                                     <div class="divider-custom-line"></div>
                                 </div>
-<table class="table  table-dark table-hover table-striped table-bordered table-responsive" id="table_usuarios">
-    <thead>
-        <tr class="table-secondary">
-            <td>Editar</td>
-            <td style ="display :none;">id</td>
-            <td >Nombre</td>
-            <td>Puesto</td>
-            <td>Departamento</td>
-            <td>Eliminar</td>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (ML.Empleado empleado in Model.Empleados)
-        {
-        <tr>
-            <td style ="text-align: center; vertical-align: middle;"><a class="btn btn-warning glyphicon" href="@Url.Action("Form", "MateriaController1", new { IdMateria = materia.IdMateria })"><i class="bi bi-pencil-square" style="color: ivory"></i></a></td>
-            <td style ="display :none;">@materia.IdMateria </td>
-            <td>@materia.Nombre</td>
-            <td>@materia.Creditos</td>
-            <td>@materia.Costo</td>
-            <td>@materia.Semestre.IdSemestre</td>
-             @if (materia.Imagen != "")
-             {
-                <td style ="text-align: center; vertical-align: middle;"><img src="data:image/*;base64,@materia.Imagen" style="width:50px ; height:50px" /></td>
-              }
-              else
-              {
-                            
-                  <td style ="text-align: center; vertical-align: middle;"><img src="~/Images/sinimagen.png" width="50px" height="50px" id="Img" /></td>
-              }
-             <td style ="text-align: center; vertical-align: middle;">
-                 @if(materia.Status == true)   
-                 {
-                 <a href="@Url.Action("UpdateStatus", "MateriaController1", new { IdMateria = materia.IdMateria })"> <img src="~/Images/ON.png" style=" height:25px; width:50px;" /></a>
-                 }
-                 else
-                 {
-                 <a href="@Url.Action("UpdateStatus", "MateriaController1", new { IdMateria = materia.IdMateria })"> <img src="~/Images/OFF.png" style=" height:25px; width:50px;" /></a>
-                 }                       
-             </td>
-
-            <td style ="text-align: center; vertical-align: middle;"><a class="btn btn-danger glyphicon glyphicon-trash" href="@Url.Action("Delete", "MateriaController1", new { IdMateria= materia.IdMateria})" onclick="return confirm('Estas seguro que deseas eliminar este registro?');"><i class="bi bi-eraser-fill" style="color: mintcream"></i></a></td>
-        </tr>
-        }
-
-    </tbody>
-</table>
-                                <button class="btn btn-primary" data-bs-dismiss="modal">
-                                    <i class="fas fa-xmark fa-fw"></i>
-                                    Close Window
-                                </button>
+                                <table class="table  table-dark table-hover table-striped table-bordered table-responsive" id="table_usuarios">
+                                    <thead>
+                                        <tr class="table-secondary">
+                                            <td>Editar</td>
+                                            <td style="display :none;">id</td>
+                                            <td>ID</td>
+                                            <td>Nombre</td>
+                                            <td>Puesto</td>
+                                            <td>Departamento</td>
+                                            <td>Eliminar</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -410,21 +383,21 @@
                                             <!-- an error submitting the form-->
                                             <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                                             <!-- Submit Button-->
-                                     @*       <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Send</button>*@
-                                                              <button class="btn btn-secondary disabled" id="submitButton" type="submit" data-bs-dismiss="modal">
-                                    <i class="fa-solid fa-check-to-slot"></i>
-                                    Agregar
-                                </button>
-                                <button class="btn btn-primary" data-bs-dismiss="modal">
-                                    <i class="fas fa-xmark fa-fw"></i>
-                                    Cerrar
-                                </button>
-                                        
+                                            @*       <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Send</button>*@
+                                            <button class="btn btn-secondary disabled" id="submitButton" type="submit" data-bs-dismiss="modal">
+                                                <i class="fa-solid fa-check-to-slot"></i>
+                                                Agregar
+                                            </button>
+                                            <button class="btn btn-primary" data-bs-dismiss="modal">
+                                                <i class="fas fa-xmark fa-fw"></i>
+                                                Cerrar
+                                            </button>
+
                                         </form>
                                     </div>
                                 </div>
 
-          
+
                             </div>
                         </div>
                     </div>
@@ -571,3 +544,30 @@
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 </html>
+
+@section Scripts
+{
+<script type="text/javascript">
+        function GetAll() {
+        $.ajax({
+
+            type: 'GET',
+            url: 'http://localhost:5065/Empleado/GetAll',
+            success: function (result) {
+                $('#table_usuarios tbody').empty();
+                $.each(result.Objects, function (i, empleado) {
+                    var filas = '<tr>' + '<td class="text-center"> ' + '<a href="#" onclick="GetById(' + empleado.IdEmpleado + ')">' + '<img  style="height: 25px; width: 25px;" src="../img/edit.ico" />' + '</a> ' + '</td>' + "<td  id='id' class='text-center'>" + empleado.IdEmpleado + "</td>" + "<td class='text-center'>" + empleado.Nombre + "</td>" + "<td class='text-center'>" + empleado.Nombre + "</td>" + "<td class='text-center'>" + empleado.ApellidoPaterno + "</ td>" + "<td class='text-center'>" + empleado.ApellidoMaterno + "</td>" + "<td class='text-center'>" + empleado.Estado.Nombre + "</td>"
+                        //+ '<td class="text-center">  <a href="#" onclick="return Eliminar(' + subCategoria.IdSubCategoria + ')">' + '<img  style="height: 25px; width: 25px;" src="../img/delete.png" />' + '</a>    </td>'
+                        + '<td class="text-center"> <button class="btn btn-danger" onclick="Eliminar(' + empleado.IdEmpleado + ')"><span class="glyphicon glyphicon-trash" style="color:#FFFFFF"></span></button></td>'
+
+                        + "</tr>";
+                    $("#SubCategorias tbody").append(filas);
+                });
+            },
+            error: function (result) {
+                alert('Error en la consulta.' + result.responseJSON.ErrorMessage);
+            }
+        })
+    }
+</script>
+}

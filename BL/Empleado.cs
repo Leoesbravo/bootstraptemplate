@@ -151,11 +151,15 @@ namespace BL
                             empleado.IdEmpleado = query.IdEmpleado;
                             empleado.Nombre = query.Nombre;
 
-                            empleado.Departamento = new ML.Departamento();
-                            empleado.Departamento.IdDepartamento = query.IdDepartamento.Value;
 
                             empleado.Puesto = new ML.Puesto();
                             empleado.Puesto.IdPuesto = query.IdPuesto.Value;
+                            empleado.Puesto.Descripcion = query.PuestoDescripcion;
+
+                            empleado.Departamento = new ML.Departamento();
+                            empleado.Departamento.Descripcion = query.DepartamentoDescripcion;
+                            empleado.Departamento.IdDepartamento = query.IdDepartamento.Value;
+
 
                             result.Objects.Add(empleado);
                         }
